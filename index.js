@@ -2,13 +2,30 @@ import express from 'express';
 
 const app=express();
 
-app.get('/samosa',(req,res)=>{
-    res.send("Here is your samosa")
+const PORT=5000;
+
+app.get("/burger",(req,res)=> {
+    res.json({
+        name:"Veg Burger",
+        price:89
+    })
 })
 
-app.get('/jalebi',(req,res)=>{
-    res.send("Here is your jalebi")
+app.get("/pizza",(req,res)=> {
+    res.json({
+        name:"cheese corn Pizza",
+        price:99
+    })
 })
+
+app.get("/pasta",(req,res)=> {
+    res.json({
+        name:"white sauce Pasta",
+        price:110
+    })
+})
+
+
 app.listen(5000, ()=>{
     console.log('server is running on port 5000');
 })
